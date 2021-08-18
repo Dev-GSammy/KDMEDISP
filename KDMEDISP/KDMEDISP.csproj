@@ -1,0 +1,1213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C373985-B66A-4402-B952-F0F182EFADDF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KDMEDISP</RootNamespace>
+    <AssemblyName>KDMEDISP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>8.0</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kdmedlogosm.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeStandard, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.2.4.0\lib\netstandard2.0\BarcodeStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net462\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LicenseSpot.Framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=de24b71aae0b435d, processorArchitecture=MSIL">
+      <HintPath>..\packages\LicenseSpot.Framework.3.9.0\lib\LicenseSpot.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorksCsvReader.4.0.0\lib\net461\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MimeKit, Version=2.14.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.14.0\lib\net46\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PrinterUtility, Version=1.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\PrinterUtility.1.2.0\lib\PrinterUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0-preview.6.21352.12\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0-preview.6.21352.12\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\APP DEV C# LIBS\Zen.Barcode.Core_\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivateLic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivateLic.Designer.cs">
+      <DependentUpon>ActivateLic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="analytics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="analytics.Designer.cs">
+      <DependentUpon>analytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppMessage.Designer.cs">
+      <DependentUpon>AppMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BASE36.cs" />
+    <Compile Include="cCheckConn.cs" />
+    <Compile Include="cDaw.cs" />
+    <Compile Include="cDrugsInfo.cs" />
+    <Compile Include="cDrugsInteractionInfo.cs" />
+    <Compile Include="cGenPrescPDF.cs" />
+    <Compile Include="clGeneratePrescPDF.cs" />
+    <Compile Include="clGlobalTrack.cs" />
+    <Compile Include="clicense.cs" />
+    <Compile Include="clPresandPatientID.cs" />
+    <Compile Include="cMACAddress.cs" />
+    <Compile Include="cNlmDDI.cs" />
+    <Compile Include="cNlmDDIMulti.cs" />
+    <Compile Include="ConnectToLicenseServer.cs" />
+    <Compile Include="cprescriptionReport.cs" />
+    <Compile Include="cRxcui.cs" />
+    <Compile Include="cSig.cs" />
+    <Compile Include="cStoreDGvMedication.cs" />
+    <Compile Include="cTrial.cs" />
+    <Compile Include="Db.cs" />
+    <Compile Include="EmailSender.cs" />
+    <Compile Include="frmAddDrugtoMedication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddDrugtoMedication.Designer.cs">
+      <DependentUpon>frmAddDrugtoMedication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSig.Designer.cs">
+      <DependentUpon>frmAddSig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashierAnalytics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashierAnalytics.Designer.cs">
+      <DependentUpon>frmCashierAnalytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctor.Designer.cs">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoctorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctorList.Designer.cs">
+      <DependentUpon>frmDoctorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrugInteraction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrugInteraction.Designer.cs">
+      <DependentUpon>frmDrugInteraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrugInteractionMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrugInteractionMain.Designer.cs">
+      <DependentUpon>frmDrugInteractionMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrugList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrugList.Designer.cs">
+      <DependentUpon>frmDrugList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFillPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFillPrescription.Designer.cs">
+      <DependentUpon>frmFillPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFinalisePrescrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFinalisePrescrip.Designer.cs">
+      <DependentUpon>frmFinalisePrescrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerateCsv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerateCsv.Designer.cs">
+      <DependentUpon>frmGenerateCsv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLicense.Designer.cs">
+      <DependentUpon>frmLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManufacturersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManufacturersList.Designer.cs">
+      <DependentUpon>frmManufacturersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMultipleDrugsInte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultipleDrugsInte.Designer.cs">
+      <DependentUpon>frmMultipleDrugsInte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewManufacturers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewManufacturers.Designer.cs">
+      <DependentUpon>frmNewManufacturers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewSupplier.Designer.cs">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotActivated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotActivated.Designer.cs">
+      <DependentUpon>frmNotActivated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientList.Designer.cs">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatients.Designer.cs">
+      <DependentUpon>frmPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfile.Designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectPrescribers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectPrescribers.Designer.cs">
+      <DependentUpon>frmSelectPrescribers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSendMail.Designer.cs">
+      <DependentUpon>frmSendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStoreData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStoreData.Designer.cs">
+      <DependentUpon>frmStoreData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSyncProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSyncProd.Designer.cs">
+      <DependentUpon>frmSyncProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTheme.Designer.cs">
+      <DependentUpon>frmTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hardwareInfo.cs" />
+    <Compile Include="loadDrugsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadDrugsList.Designer.cs">
+      <DependentUpon>loadDrugsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPrescription.Designer.cs">
+      <DependentUpon>NewPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadCsv.cs" />
+    <Compile Include="RestApi.cs" />
+    <Compile Include="serialize.cs" />
+    <Compile Include="BrandInsertEventArgs.cs" />
+    <Compile Include="CartItems.cs" />
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryInfo.cs" />
+    <Compile Include="CheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultConfig.cs" />
+    <Compile Include="frmBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBarcode.Designer.cs">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoryList.Designer.cs">
+      <DependentUpon>frmCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddBrand.cs" />
+    <Compile Include="encrypt.cs" />
+    <Compile Include="frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmailSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmailSettings.Designer.cs">
+      <DependentUpon>frmEmailSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGsUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGsUpdate.Designer.cs">
+      <DependentUpon>FrmGsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrug.Designer.cs">
+      <DependentUpon>frmDrug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQty.Designer.cs">
+      <DependentUpon>frmQty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecords.Designer.cs">
+      <DependentUpon>frmRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchProductStockin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchProductStockin.Designer.cs">
+      <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsoldItems.Designer.cs">
+      <DependentUpon>frmsoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock.Designer.cs">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTopSelling.Designer.cs">
+      <DependentUpon>frmTopSelling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateExcel.cs" />
+    <Compile Include="GeneratePDF.cs" />
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewBrand.cs" />
+    <Compile Include="NewRecord.cs" />
+    <Compile Include="PosOrder.cs" />
+    <Compile Include="PrintReceipt.cs" />
+    <Compile Include="productLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productLookup.Designer.cs">
+      <DependentUpon>productLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Prompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prompt.Designer.cs">
+      <DependentUpon>Prompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawPrinterHelper.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateCSV.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TaskReport.cs" />
+    <Compile Include="util.cs" />
+    <Compile Include="ValancePrinter.cs" />
+    <Compile Include="Web.cs" />
+    <Compile Include="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivateLic.resx">
+      <DependentUpon>ActivateLic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="analytics.resx">
+      <DependentUpon>analytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppMessage.resx">
+      <DependentUpon>AppMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddDrugtoMedication.resx">
+      <DependentUpon>frmAddDrugtoMedication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSig.resx">
+      <DependentUpon>frmAddSig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBarcode.resx">
+      <DependentUpon>frmBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashierAnalytics.resx">
+      <DependentUpon>frmCashierAnalytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoryList.resx">
+      <DependentUpon>frmCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctor.resx">
+      <DependentUpon>frmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctorList.resx">
+      <DependentUpon>frmDoctorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrugInteraction.resx">
+      <DependentUpon>frmDrugInteraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrugInteractionMain.resx">
+      <DependentUpon>frmDrugInteractionMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrugList.resx">
+      <DependentUpon>frmDrugList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmailSettings.resx">
+      <DependentUpon>frmEmailSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFillPrescription.resx">
+      <DependentUpon>frmFillPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFinalisePrescrip.resx">
+      <DependentUpon>frmFinalisePrescrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerateCsv.resx">
+      <DependentUpon>frmGenerateCsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGsUpdate.resx">
+      <DependentUpon>FrmGsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLicense.resx">
+      <DependentUpon>frmLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManufacturersList.resx">
+      <DependentUpon>frmManufacturersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMultipleDrugsInte.resx">
+      <DependentUpon>frmMultipleDrugsInte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewManufacturers.resx">
+      <DependentUpon>frmNewManufacturers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewSupplier.resx">
+      <DependentUpon>frmNewSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotActivated.resx">
+      <DependentUpon>frmNotActivated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientList.resx">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatients.resx">
+      <DependentUpon>frmPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrug.resx">
+      <DependentUpon>frmDrug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQty.resx">
+      <DependentUpon>frmQty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecords.resx">
+      <DependentUpon>frmRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchProductStockin.resx">
+      <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectPrescribers.resx">
+      <DependentUpon>frmSelectPrescribers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSendMail.resx">
+      <DependentUpon>frmSendMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsoldItems.resx">
+      <DependentUpon>frmsoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStoreData.resx">
+      <DependentUpon>frmStoreData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSyncProd.resx">
+      <DependentUpon>frmSyncProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTheme.resx">
+      <DependentUpon>frmTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTopSelling.resx">
+      <DependentUpon>frmTopSelling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadDrugsList.resx">
+      <DependentUpon>loadDrugsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPrescription.resx">
+      <DependentUpon>NewPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productLookup.resx">
+      <DependentUpon>productLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prompt.resx">
+      <DependentUpon>Prompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User Male_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-png-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Calendar_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Checked_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Empty_Trash_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_PDF_2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Plus_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Redo_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Trash_Can_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_User_Groups_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Course_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img\danger.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\googlepre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Spray_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Exit_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Login_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_List_of_Thumbnails_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gears_48px_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Exit_48px_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Edit_Profile_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Trash_Can_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Trash_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Add_New_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Add_New_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Pencil_Drawing_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\query.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_QR_Code_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Print_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Facebook_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gmail_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Instagram_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Twitter_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_WhatsApp_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Ok_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Ok_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Commodity_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Shopping_Cart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_New_Slide_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_New_Slide_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Search_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Discount_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Add_Shopping_Cart_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Return_Purchase_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Forgot_Password_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Close_Window_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Sales_Performance_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ingredients_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ingredients1_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hierarchy_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Moleskine_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gears_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_3D_House_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Profile_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Sign_Out_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Box_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Grocery_Bag_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Barcode_Reader_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\averageunit per transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product overview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode Scanner_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode Scanner_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QR Code_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Opened Folder_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter Key_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reset_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear Shopping Cart_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Approval_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkout_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idea_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReceiveCash_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CashHand_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bill_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stockOK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adjust_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bellGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kdmedlogosm.ico" />
+    <None Include="Resources\refresh_20px.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\HIPS_16px.png" />
+    <None Include="Resources\Key_16px.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\RX.png" />
+    <None Include="Resources\Pharmacy_32px1.png" />
+    <None Include="Resources\kdmedlogo1.png" />
+    <None Include="Resources\Checkmark_16px.png" />
+    <None Include="Resources\Buy_16px.png" />
+    <None Include="Resources\Receipt_20px.png" />
+    <None Include="Resources\Purchase Order_48px.png" />
+    <None Include="Resources\Name_16px.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\ph.png" />
+    <None Include="Resources\Toggle On_20px.png" />
+    <None Include="Resources\Toggle Off_20px.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\pw.png" />
+    <None Include="Resources\Gmail_16px.png" />
+    <None Include="Resources\Ok_16px.png" />
+    <None Include="Resources\pr.png" />
+    <None Include="Resources\Services_20px.png" />
+    <None Include="Resources\Send Email_20px.png" />
+    <None Include="Resources\Attach_20px.png" />
+    <Content Include="imp.txt" />
+    <None Include="Resources\emailadd.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\store1.png" />
+    <None Include="Resources\OfficePhone_20px1.png" />
+    <None Include="Resources\emailpink1.png" />
+    <None Include="Resources\Address_20px1.png" />
+    <None Include="Resources\posrec.png" />
+    <None Include="Resources\ForwardMessage_20px.png" />
+    <None Include="Resources\ware.png" />
+    <None Include="Resources\1p.png" />
+    <None Include="Resources\2p.png" />
+    <None Include="Resources\3p.png" />
+    <None Include="Resources\4p.png" />
+    <None Include="Resources\5p.png" />
+    <None Include="Resources\6p.png" />
+    <None Include="Resources\NewContact_40px.png" />
+    <None Include="Resources\Exit_20px.png" />
+    <None Include="Resources\Website_20px.png" />
+    <None Include="Resources\ExtensionsFolder_20px.png" />
+    <None Include="Resources\Network_20px.png" />
+    <None Include="Resources\Network_48px.png" />
+    <None Include="Resources\ExportCSV_48px.png" />
+    <None Include="Resources\ExportCSV_20px.png" />
+    <None Include="Resources\bottle.gif" />
+    <None Include="Resources\3gif.gif" />
+    <None Include="Resources\Books_48px.png" />
+    <None Include="Resources\infinity.gif" />
+    <None Include="Resources\6.gif" />
+    <None Include="Resources\222.gif" />
+    <None Include="Resources\icons8_Pills_48px.png" />
+    <None Include="Resources\SupplementBottle_48px.png" />
+    <None Include="Resources\Pill_48px1.png" />
+    <None Include="Resources\Hospital_50px.png" />
+    <None Include="Resources\Male_20px.png" />
+    <None Include="Resources\patient_20px.png" />
+    <None Include="Resources\Hospitapx.png" />
+    <None Include="Resources\drug.png" />
+    <None Include="Resources\Doctormale_32px.png" />
+    <None Include="Resources\patient2.png" />
+    <None Include="Resources\Treatment_32px.png" />
+    <None Include="Resources\Pharmacy_32px.png" />
+    <None Include="Resources\Clinic_32px.png" />
+    <None Include="Resources\kdmedlogosm.png" />
+    <None Include="Resources\kdmedlogosm1.png" />
+    <None Include="Resources\Male_20px1.png" />
+    <None Include="Resources\Sneeze_20px.png" />
+    <None Include="Resources\IdentificationDocuments_20px.png" />
+    <None Include="Resources\drug1.png" />
+    <None Include="Resources\Worker_20px.png" />
+    <None Include="Resources\Sell_20px.png" />
+    <None Include="Resources\Sell_32px.png" />
+    <None Include="Resources\Manufacturing_25px.png" />
+    <None Include="Resources\Pills_30px.png" />
+    <None Include="Resources\Return_30px.png" />
+    <None Include="Resources\Return_25px.png" />
+    <None Include="Resources\HealthCheckup_25px.png" />
+    <None Include="Resources\ExportPdf_30px.png" />
+    <None Include="Resources\AddNew_22px.png" />
+    <None Include="Resources\newpatient22.png" />
+    <None Include="Resources\ExportPdf_22px.png" />
+    <None Include="Resources\MedicalDoctor_22px.png" />
+    <None Include="Resources\PilBottle_22px.png" />
+    <None Include="Resources\MedicalDoctor_48px.png" />
+    <None Include="Resources\PhysicalTherapy_48px.png" />
+    <None Include="Resources\dispense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
